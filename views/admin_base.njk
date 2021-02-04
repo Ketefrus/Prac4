@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            {% block titulo %}Productos asturianos V3{% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/estilos.css"/>
+    </head>
+    <body>
+        <header>
+            {% include "admin_menu.njk" %}
+        </header>
+        <main class="container">
+            {% block contenido %}{% endblock %}
+        </main>
+    </body>
+</html>

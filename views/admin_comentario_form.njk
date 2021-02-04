@@ -1,0 +1,15 @@
+<h1>Comentario</h1>
+
+<form action="/producto/{{ producto.id }}" method="post">
+    <div class="form-group">
+        <label for="nombreUsuario">Nombre Usuario:</label>
+        <input type="text" class="form-control" name="nombreUsuario" 
+                placeholder="Nombre del Usuario..."/>
+    </div>
+    <div class="form-group">
+        <label for="comentario">Comentario:</label>
+        <input type="text" class="form-control" name="comentario"
+                placeholder="Comentario..."/>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

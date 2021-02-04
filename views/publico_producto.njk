@@ -1,0 +1,49 @@
+{% extends "publico_base.njk" %}
+{% block titulo %}Detalles del Producto{% endblock %}
+{% block contenido %}
+    <div class="container-fluid">
+        <h1>Detalle del producto</h1>
+        <div class="panel panel-default row">
+            <div class="panel-heading col-md-5 col-lg-4">
+                {% if producto.imagen !== "" %}
+                    <img class="img-thumbnail" src="/public/uploads/{{producto.imagen}}" alt="">
+                {% endif %}
+            </div>
+            <div class="panel-body col-md-7 col-lg-8">
+                <h3>{{producto.nombre}}</h3>
+                <p>
+                    {{ producto.precio }}
+                    €
+                </p>
+                <p>
+                    {{ producto.descripcion }}
+                </p>
+            </div>
+        </div>
+        <div width="80%">
+            <p>
+                <b>
+                    <i>Comentarios</i>
+                </b>
+            </p>
+            <ul>
+                {% for comentario in producto.comentarios %}
+                    <h3>
+                        <img src="/public/uploads/user.png" style="border-radius: 50%; width: 35px;">
+                        {{ comentario.nombreUsuario }}
+                    </h3>
+                    <li>
+                        <i>
+                            {{ comentario.comentario }}
+                            <form style="display:inline" action="/producto/{{ producto.id }}/{{ comentario.id}}" method="post">
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+                            </form>
+                        </i>
+                    </li>
+                {% endfor %}
+            </ul>
+            {%include 'admin_comentario_form.njk' %}
+        </div>
+    </div>
+{% endblock %}

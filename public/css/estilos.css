@@ -1,0 +1,38 @@
+a:hover {
+    text-decoration: none;
+}
+
+#buscar {
+    float: left;
+    width: 75%;
+    margin-right: 10px;
+    height: 37px;
+}
+
+#enviar {
+    margin-left: 15px;
+}
+
+nav>a:first-child {
+    margin-left: 5%;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    margin-top: 40px;
+}
+
+#rojo {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+#azul {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
